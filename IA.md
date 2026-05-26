@@ -1,8 +1,26 @@
-Herramienta utilizada: Claude (Anthropic)
-Fecha: 26-05-25
-Prompt utilizado: 
-Resultado generado: 
-Modificaciones realizadas: 
-Justificación: 
+# Uso de IA
 
+## Herramienta utilizada
+Claude(anthtropic) - claude.ai
+
+## Actividad 1: index.html
+
+** 20/05/26**
+
+** Prompt : ** "Necesito estilizar con CSS para que sea moderno limpio y profesional. Debe tener: colores claros, botones modernos, inputs estilizados, centrado de contenido"
+
+**Modificaciones:** Tamaño de letras y colores
+
+**Justificación:** Conocer como se modifican tamaños, márgenes y colores en CSS.
+
+## Actividad 2: login.html
+
+
+** 26/05/2025 **
+
+** Prompt : ** ""Crear página de Login con logo, formulario de email y contraseña, botón ingresar y links de recuperar contraseña y registrarse""
+
+**Modificaciones:** Tamaño de letras y colores
+
+**Justificación:** Modificar a colores corportativos del logo, y conocer parámetros en CSS
 
