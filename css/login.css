@@ -1,0 +1,180 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f0ede8;
+  --surface: #ffffff;
+  --purple: #2d1b69;
+  --gold: #f5a623;
+  --text: #1a1a2e;
+  --muted: #6b7280;
+  --border: #e2ddd8;
+  --radius: 16px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fondo con textura sutil */
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(45,27,105,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(245,166,35,0.08) 0%, transparent 50%),
+    var(--bg);
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.04),
+    0 8px 24px rgba(45,27,105,0.08);
+}
+
+/* ── LOGO ── */
+.card-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+  padding: 1rem 1.5rem;
+  background: var(--purple);
+  border-radius: 10px;
+}
+
+.card-logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* ── TÍTULO ── */
+.card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+/* ── FORMULARIO ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input-group input {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #faf9f7;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input::placeholder {
+  color: #b0aaa4;
+}
+
+.input-group input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(45,27,105,0.1);
+  background: #fff;
+}
+
+/* ── BOTÓN ── */
+.btn-ingresar {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: var(--purple);
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(45,27,105,0.3);
+}
+
+.btn-ingresar:hover {
+  background: #3d2490;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(45,27,105,0.35);
+}
+
+.btn-ingresar:active {
+  transform: translateY(0);
+}
+
+/* ── LINKS ── */
+.card-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.card-links a {
+  font-size: 0.85rem;
+  color: var(--purple);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.card-links a:hover {
+  color: var(--gold);
+}
+
+.divider {
+  color: var(--border);
+  font-size: 1rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+}
