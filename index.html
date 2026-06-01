@@ -3,105 +3,218 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SportClub</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <title>SportClub – Tu mejor versión comienza hoy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <!-- HEADER -->
-  <header>
+  <header class="header">
     <div class="header-inner">
-      <span class="logo">SportClub</span>
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#planes">Planes</a>
-        <a href="#contacto">Contacto</a>
+      <a href="index.html" class="header-logo">
+        <img src="assets/img/logo.png" alt="SportClub">
+      </a>
+      <nav class="nav">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#beneficios" class="nav-link">Beneficios</a>
+        <a href="#planes" class="nav-link">Planes</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="pages/login.html" class="nav-btn">Login</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <main class="hero" id="inicio">
-    <div>
-      <span class="hero-badge">✦ Bienvenido</span>
-      <h1>Entrena con nosotros</h1>
-      <p>Un espacio pensado para mejorar tu salud, entrenar con profesionales y participar en diferentes clases deportivas.</p>
-      <a href="#planes" class="btn-primary">Conocer planes</a>
-    </div>
-    <div class="hero-visual">SC</div>
-  </main>
-
-  <!-- PLANES -->
-  <section id="planes">
-    <h2 class="section-title">Planes disponibles</h2>
-    <p class="section-sub">Elige el plan que mejor se adapte a ti</p>
-    <div class="planes-grid">
-
-      <div class="plan-card">
-        <h3>Plan Básico</h3>
-        <p>Acceso a clases grupales 2 veces por semana.</p>
-        <div class="plan-price">$15.000</div>
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-tag">Club Deportivo</span>
+        <h1 class="hero-title">Tu mejor versión<br><span class="hero-accent">comienza hoy</span></h1>
+        <p class="hero-desc">Entrena con los mejores profesionales, alcanza tus metas y transforma tu vida. SportClub es tu espacio para crecer.</p>
+        <div class="hero-actions">
+          <a href="pages/registro.html" class="btn-primary">Únete ahora</a>
+          <a href="#planes" class="btn-secondary">Ver planes</a>
+        </div>
       </div>
-
-      <div class="plan-card featured">
-        <span class="plan-badge">Popular</span>
-        <h3>Plan Premium</h3>
-        <p>Acceso ilimitado a clases y uso de instalaciones.</p>
-        <div class="plan-price">$30.000</div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-stat">
+            <span class="stat-num">+500</span>
+            <span class="stat-label">Miembros activos</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">20+</span>
+            <span class="stat-label">Clases semanales</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">10</span>
+            <span class="stat-label">Coaches expertos</span>
+          </div>
+        </div>
       </div>
-
-      <div class="plan-card">
-        <h3>Plan Familiar</h3>
-        <p>Plan para grupos familiares con beneficios especiales.</p>
-        <div class="plan-price">$50.000</div>
-      </div>
-
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <div class="contact-section" id="contacto">
-    <h2 class="section-title">Contacto</h2>
-    <p class="section-sub">Estamos para ayudarte</p>
-    <div class="contact-grid">
+  <!-- BENEFICIOS -->
+  <section class="section" id="beneficios">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">¿Por qué elegirnos?</span>
+        <h2 class="section-title">Beneficios SportClub</h2>
+        <p class="section-sub">Todo lo que necesitas para alcanzar tus metas en un solo lugar</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🏋️</div>
+          <h3>Equipamiento de primer nivel</h3>
+          <p>Instalaciones modernas con equipos de última generación para tu entrenamiento.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">👨‍🏫</div>
+          <h3>Coaches certificados</h3>
+          <p>Profesionales certificados que te guían y motivan en cada sesión de entrenamiento.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📅</div>
+          <h3>Horarios flexibles</h3>
+          <p>Más de 20 clases semanales en distintos horarios para adaptarse a tu rutina.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h3>Comunidad activa</h3>
+          <p>Más de 500 miembros que comparten tu pasión por el deporte y el bienestar.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📱</div>
+          <h3>Seguimiento digital</h3>
+          <p>Accede a tu perfil, reservas y progreso desde cualquier dispositivo.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Planes personalizados</h3>
+          <p>Rutinas diseñadas según tus objetivos, nivel y disponibilidad horaria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="contact-info">
-        <p>
-          <span class="contact-icon">✉</span>
-          contacto@sportclub.cl
-        </p>
-        <p>
-          <span class="contact-icon">📞</span>
-          +56 9 1234 5678
-        </p>
-        <p>
-          <span class="contact-icon">📍</span>
-          Av. Principal 123, Santiago
-        </p>
+  <!-- PLANES -->
+  <section class="section section-dark" id="planes">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Elige tu plan</span>
+        <h2 class="section-title">Planes disponibles</h2>
+        <p class="section-sub">Encuentra el plan que mejor se adapte a ti y a tus metas</p>
+      </div>
+      <div class="planes-grid">
+
+        <div class="plan-card">
+          <div class="plan-header">
+            <h3>Plan Básico</h3>
+            <div class="plan-price">$15.000<span>/mes</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Acceso a clases grupales</li>
+            <li>✓ 2 sesiones por semana</li>
+            <li>✓ Vestuarios y duchas</li>
+            <li>✓ Acceso a app SportClub</li>
+          </ul>
+          <a href="pages/registro.html" class="btn-plan">Comenzar</a>
+        </div>
+
+        <div class="plan-card plan-featured">
+          <span class="plan-badge">Más popular</span>
+          <div class="plan-header">
+            <h3>Plan Premium</h3>
+            <div class="plan-price">$30.000<span>/mes</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Acceso ilimitado a clases</li>
+            <li>✓ Uso completo instalaciones</li>
+            <li>✓ 1 sesión mensual con coach</li>
+            <li>✓ Seguimiento de progreso</li>
+            <li>✓ Acceso a app SportClub</li>
+          </ul>
+          <a href="pages/registro.html" class="btn-plan">Comenzar</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-header">
+            <h3>Plan Familiar</h3>
+            <div class="plan-price">$50.000<span>/mes</span></div>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Hasta 4 integrantes</li>
+            <li>✓ Acceso ilimitado a clases</li>
+            <li>✓ Actividades familiares</li>
+            <li>✓ Descuentos exclusivos</li>
+            <li>✓ Acceso a app SportClub</li>
+          </ul>
+          <a href="pages/registro.html" class="btn-plan">Comenzar</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE EL CLUB -->
+  <section class="section" id="sobre">
+    <div class="section-inner">
+      <div class="sobre-grid">
+        <div class="sobre-content">
+          <span class="section-tag">Nuestra historia</span>
+          <h2 class="section-title">Sobre SportClub</h2>
+          <p class="sobre-text">SportClub nació con la visión de crear un espacio donde el deporte, la tecnología y la comunidad se unieran para transformar vidas. Desde nuestros inicios hemos acompañado a cientos de personas en su camino hacia una vida más activa y saludable.</p>
+        </div>
+        <div class="sobre-cards">
+          <div class="sobre-card">
+            <h4>🎯 Misión</h4>
+            <p>Promover el bienestar físico y mental mediante entrenamientos deportivos y tecnología aplicada al seguimiento de usuarios.</p>
+          </div>
+          <div class="sobre-card">
+            <h4>🔭 Visión</h4>
+            <p>Ser el club deportivo referente en innovación y transformación personal en Chile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacto">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="SportClub" class="footer-logo">
+        <p>Tu mejor versión comienza hoy.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">📘 Facebook</a>
+          <a href="#" class="social-link">📸 Instagram</a>
+          <a href="#" class="social-link">🐦 Twitter</a>
+        </div>
       </div>
 
-      <form class="contact-form" onsubmit="return false;">
-        <div class="input-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" placeholder="Tu nombre">
-        </div>
-        <div class="input-group">
-          <label for="correo">Correo</label>
-          <input type="email" id="correo" placeholder="tu@correo.cl">
-        </div>
-        <div class="input-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" rows="3" placeholder="¿En qué podemos ayudarte?"></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Enviar mensaje</button>
-      </form>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>✉ contacto@sportclub.cl</p>
+        <p>📞 +56 9 1234 5678</p>
+        <p>📍 Av. Principal 123, Santiago</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Accesos</h4>
+        <a href="pages/login.html">Iniciar sesión</a>
+        <a href="pages/registro.html">Registrarse</a>
+        <a href="#planes">Ver planes</a>
+        <a href="#beneficios">Beneficios</a>
+      </div>
 
     </div>
-  </div>
-
-  <footer>
-    <p>© 2025 SportClub — Todos los derechos reservados</p>
+    <div class="footer-bottom">
+      <p>© 2025 SportClub – Todos los derechos reservados</p>
+    </div>
   </footer>
 
 </body>

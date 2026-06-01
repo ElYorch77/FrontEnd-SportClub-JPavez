@@ -24,3 +24,12 @@ Claude(anthtropic) - claude.ai
 
 **Justificación:** Modificar a colores corportativos del logo, y conocer parámetros en CSS
 
+## Actividad 3: Rehacer el script de index
+
+** 01/06/2025 **
+
+** Prompt : ** ""Modificar login para componer con la nueva distribución de carpetas""
+
+**Modificaciones:** Modificación de script en index, modificando tamaño y distribución de imagenes y fuentes.
+
+**Justificación:** Ajustar los parámetros probando diferentes opciones visuales.
