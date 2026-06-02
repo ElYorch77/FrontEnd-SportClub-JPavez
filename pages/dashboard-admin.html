@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportClub - Dashboard Administrador</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard-admin.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <img src="../assets/img/logo.png" alt="SportClub" class="header-logo">
+    </div>
+    <div class="header-right">
+      <a href="#" class="btn-header">👤 Mi Perfil</a>
+      <a href="../pages/login.html" class="btn-header btn-logout">⏻ Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#inicio" class="nav-item active">🏠 Inicio</a>
+        <a href="#usuarios" class="nav-item">👥 Usuarios</a>
+        <a href="#reportes" class="nav-item">📊 Reportes</a>
+        <a href="#clases" class="nav-item">🏋️ Clases</a>
+        <a href="#configuracion" class="nav-item">⚙️ Configuración</a>
+      </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+
+      <!-- BIENVENIDA + STATS -->
+      <section class="section" id="inicio">
+        <div class="welcome-card">
+          <div>
+            <h1 class="welcome-title">Panel Administrador 🛡️</h1>
+            <p class="welcome-msg">Bienvenido al panel de control general del sistema SportClub.</p>
+          </div>
+          <div class="welcome-badge">⚙️ Administrador</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon">👥</span>
+            <span class="stat-num">128</span>
+            <span class="stat-label">Total usuarios</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">👨‍🏫</span>
+            <span class="stat-num">10</span>
+            <span class="stat-label">Total coaches</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🏋️</span>
+            <span class="stat-num">24</span>
+            <span class="stat-label">Total clases</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TABLA USUARIOS -->
+      <section class="section" id="usuarios">
+        <h2 class="section-title">👥 Usuarios del Sistema</h2>
+        <div class="table-wrap">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>RUT</th>
+                <th>Nombre completo</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Fecha registro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>12.345.678-9</td>
+                <td>Jorge Pavez Muñoz</td>
+                <td><span class="rol rol-usuario">Usuario</span></td>
+                <td><span class="badge badge-active">Activo</span></td>
+                <td>01/03/2025</td>
+              </tr>
+              <tr>
+                <td>13.456.789-0</td>
+                <td>Carlos Mena Rojas</td>
+                <td><span class="rol rol-coach">Coach</span></td>
+                <td><span class="badge badge-active">Activo</span></td>
+                <td>15/01/2025</td>
+              </tr>
+              <tr>
+                <td>14.567.890-1</td>
+                <td>María González López</td>
+                <td><span class="rol rol-usuario">Usuario</span></td>
+                <td><span class="badge badge-active">Activo</span></td>
+                <td>20/02/2025</td>
+              </tr>
+              <tr>
+                <td>15.678.901-2</td>
+                <td>Ana Torres Silva</td>
+                <td><span class="rol rol-coach">Coach</span></td>
+                <td><span class="badge badge-inactive">Inactivo</span></td>
+                <td>10/01/2025</td>
+              </tr>
+              <tr>
+                <td>16.789.012-3</td>
+                <td>Pedro Soto Fuentes</td>
+                <td><span class="rol rol-admin">Administrador</span></td>
+                <td><span class="badge badge-active">Activo</span></td>
+                <td>01/01/2025</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PANEL REPORTES -->
+      <section class="section" id="reportes">
+        <h2 class="section-title">📊 Panel de Reportes</h2>
+        <div class="reportes-grid">
+
+          <div class="reporte-card">
+            <h3>🔥 Clases más solicitadas</h3>
+            <ul class="reporte-list">
+              <li><span>Crossfit</span><span class="reporte-val">48 reservas</span></li>
+              <li><span>Funcional</span><span class="reporte-val">35 reservas</span></li>
+              <li><span>Spinning</span><span class="reporte-val">29 reservas</span></li>
+              <li><span>Yoga</span><span class="reporte-val">22 reservas</span></li>
+            </ul>
+          </div>
+
+          <div class="reporte-card">
+            <h3>✅ Usuarios activos</h3>
+            <ul class="reporte-list">
+              <li><span>Total activos</span><span class="reporte-val badge-active-text">112</span></li>
+              <li><span>Total inactivos</span><span class="reporte-val badge-inactive-text">16</span></li>
+              <li><span>Nuevos este mes</span><span class="reporte-val">8</span></li>
+              <li><span>Plan Premium</span><span class="reporte-val">54</span></li>
+            </ul>
+          </div>
+
+          <div class="reporte-card">
+            <h3>📅 Reservas del día</h3>
+            <ul class="reporte-list">
+              <li><span>Crossfit 07:00</span><span class="reporte-val">12 alumnos</span></li>
+              <li><span>Yoga 09:00</span><span class="reporte-val">8 alumnos</span></li>
+              <li><span>Funcional 19:00</span><span class="reporte-val">10 alumnos</span></li>
+              <li><span>Spinning 18:00</span><span class="reporte-val">15 alumnos</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONFIGURACIÓN -->
+      <section class="section" id="configuracion">
+        <h2 class="section-title">⚙️ Configuración Rápida</h2>
+        <div class="config-grid">
+          <button class="btn-config btn-crear">
+            <span class="config-icon">➕</span>
+            <span class="config-label">Crear usuario</span>
+          </button>
+          <button class="btn-config btn-editar">
+            <span class="config-icon">✏️</span>
+            <span class="config-label">Editar sistema</span>
+          </button>
+          <button class="btn-config btn-settings">
+            <span class="config-icon">⚙️</span>
+            <span class="config-label">Configuración</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
