@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportClub - Dashboard Usuario</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard-usuario.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <img src="../assets/img/logo.png" alt="SportClub" class="header-logo">
+    </div>
+    <div class="header-right">
+      <a href="#perfil" class="btn-header">👤 Mi Perfil</a>
+      <a href="../pages/login.html" class="btn-header btn-logout">⏻ Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#inicio" class="nav-item active">🏠 Inicio</a>
+        <a href="#reservas" class="nav-item">📅 Reservas</a>
+        <a href="#clases" class="nav-item">🏋️ Clases</a>
+        <a href="#perfil" class="nav-item">👤 Mi Perfil</a>
+      </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+
+      <!-- BIENVENIDA -->
+      <section class="section" id="inicio">
+        <div class="welcome-card">
+          <div>
+            <h1 class="welcome-title">¡Bienvenido, Jorge! 👋</h1>
+            <p class="welcome-msg">Continúa entrenando para alcanzar tus metas. ¡Hoy es un gran día para superarte!</p>
+          </div>
+          <div class="welcome-badge">🏆 Miembro Premium</div>
+        </div>
+      </section>
+
+      <!-- RESERVAS -->
+      <section class="section" id="reservas">
+        <h2 class="section-title">📅 Mis Reservas</h2>
+        <div class="table-wrap">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>Clase</th>
+                <th>Día</th>
+                <th>Hora</th>
+                <th>Coach</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Crossfit</td>
+                <td>Lunes</td>
+                <td>07:00</td>
+                <td>Carlos Mena</td>
+                <td><span class="badge badge-active">Confirmada</span></td>
+              </tr>
+              <tr>
+                <td>Yoga</td>
+                <td>Martes</td>
+                <td>09:00</td>
+                <td>Ana Torres</td>
+                <td><span class="badge badge-active">Confirmada</span></td>
+              </tr>
+              <tr>
+                <td>Funcional</td>
+                <td>Miércoles</td>
+                <td>19:00</td>
+                <td>Pedro Soto</td>
+                <td><span class="badge badge-active">Confirmada</span></td>
+              </tr>
+              <tr>
+                <td>Spinning</td>
+                <td>Jueves</td>
+                <td>18:00</td>
+                <td>María López</td>
+                <td><span class="badge badge-pending">Pendiente</span></td>
+              </tr>
+              <tr>
+                <td>Pilates</td>
+                <td>Viernes</td>
+                <td>10:00</td>
+                <td>Ana Torres</td>
+                <td><span class="badge badge-active">Confirmada</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CLASES DISPONIBLES -->
+      <section class="section" id="clases">
+        <h2 class="section-title">🏋️ Clases disponibles</h2>
+        <div class="clases-grid">
+
+          <div class="clase-card">
+            <div class="clase-icon">🔥</div>
+            <h3>Crossfit</h3>
+            <p>Entrenamiento de alta intensidad que combina fuerza, resistencia y velocidad.</p>
+            <a href="#" class="btn-clase">Reservar</a>
+          </div>
+
+          <div class="clase-card">
+            <div class="clase-icon">🧘</div>
+            <h3>Yoga</h3>
+            <p>Mejora tu flexibilidad, equilibrio y bienestar mental con esta práctica.</p>
+            <a href="#" class="btn-clase">Reservar</a>
+          </div>
+
+          <div class="clase-card">
+            <div class="clase-icon">⚡</div>
+            <h3>Funcional</h3>
+            <p>Entrenamiento completo enfocado en movimientos naturales del cuerpo.</p>
+            <a href="#" class="btn-clase">Reservar</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PERFIL RÁPIDO -->
+      <section class="section" id="perfil">
+        <h2 class="section-title">👤 Mi Perfil</h2>
+        <div class="perfil-card">
+          <div class="perfil-avatar">JP</div>
+          <div class="perfil-info">
+            <div class="perfil-item">
+              <span class="perfil-label">Nombre</span>
+              <span class="perfil-value">Jorge Pavez</span>
+            </div>
+            <div class="perfil-item">
+              <span class="perfil-label">Correo</span>
+              <span class="perfil-value">jorge.pavez@sportclub.cl</span>
+            </div>
+            <div class="perfil-item">
+              <span class="perfil-label">Deporte favorito</span>
+              <span class="perfil-value">Crossfit</span>
+            </div>
+            <div class="perfil-item">
+              <span class="perfil-label">Plan</span>
+              <span class="perfil-value">Premium</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
