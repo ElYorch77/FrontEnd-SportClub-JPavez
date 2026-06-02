@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportClub - Recuperar Contraseña</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/recuperar.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="page-left">
+      <div class="brand">
+        <img src="../assets/img/logo.png" alt="SportClub">
+        <p class="brand-slogan">Tu mejor versión comienza hoy</p>
+      </div>
+      <div class="brand-msg">
+        <p>🔒 Tu seguridad es lo primero.</p>
+        <p>Te enviaremos un enlace para restablecer tu contraseña de forma segura.</p>
+      </div>
+    </div>
+
+    <!-- LADO DERECHO -->
+    <div class="page-right">
+      <div class="card">
+
+        <div class="card-icon">🔑</div>
+        <h1 class="card-title">Recuperar contraseña</h1>
+        <p class="card-subtitle">Ingresa tu correo y te enviaremos un enlace para restablecer tu contraseña.</p>
+
+        <!-- MENSAJE DE CONFIRMACIÓN (oculto por defecto) -->
+        <div class="msg msg-success" id="msg-confirmacion">
+          ✅ Se ha enviado un enlace de recuperación al correo ingresado. Revisa tu bandeja de entrada.
+        </div>
+
+        <form class="form" onsubmit="return false;">
+
+          <div class="input-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="Ingresa tu correo registrado">
+          </div>
+
+          <button
+            type="submit"
+            class="btn-enviar"
+            onclick="document.getElementById('msg-confirmacion').style.display='block'">
+            Enviar enlace
+          </button>
+
+        </form>
+
+        <div class="card-links">
+          <a href="login.html">← Volver al Login</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
