@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportClub - Dashboard Coach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard-coach.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <img src="../assets/img/logo.png" alt="SportClub" class="header-logo">
+    </div>
+    <div class="header-right">
+      <a href="#" class="btn-header">👤 Mi Perfil</a>
+      <a href="../pages/login.html" class="btn-header btn-logout">⏻ Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#inicio" class="nav-item active">🏠 Inicio</a>
+        <a href="#alumnos" class="nav-item">👥 Alumnos</a>
+        <a href="#clases" class="nav-item">🏋️ Clases</a>
+        <a href="#horarios" class="nav-item">📅 Horarios</a>
+      </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+
+      <!-- BIENVENIDA -->
+      <section class="section" id="inicio">
+        <div class="welcome-card">
+          <div>
+            <h1 class="welcome-title">¡Hola, Coach Carlos! 💪</h1>
+            <p class="welcome-msg">Tienes 3 clases programadas hoy. ¡A dar lo mejor!</p>
+          </div>
+          <div class="welcome-badge">🏅 Coach Certificado</div>
+        </div>
+
+        <!-- PANEL RESUMEN -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon">👥</span>
+            <span class="stat-num">24</span>
+            <span class="stat-label">Total alumnos</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🏋️</span>
+            <span class="stat-num">8</span>
+            <span class="stat-label">Clases activas</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">⏱️</span>
+            <span class="stat-num">18</span>
+            <span class="stat-label">Horas semanales</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTA ALUMNOS -->
+      <section class="section" id="alumnos">
+        <h2 class="section-title">👥 Lista de Alumnos</h2>
+        <div class="table-wrap">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Clase asignada</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jorge Pavez</td>
+                <td>jorge.pavez@mail.cl</td>
+                <td>Crossfit</td>
+                <td><span class="badge badge-active">Activo</span></td>
+              </tr>
+              <tr>
+                <td>María González</td>
+                <td>maria.g@mail.cl</td>
+                <td>Funcional</td>
+                <td><span class="badge badge-active">Activo</span></td>
+              </tr>
+              <tr>
+                <td>Pedro Soto</td>
+                <td>pedro.soto@mail.cl</td>
+                <td>Crossfit</td>
+                <td><span class="badge badge-active">Activo</span></td>
+              </tr>
+              <tr>
+                <td>Valentina Ríos</td>
+                <td>vale.rios@mail.cl</td>
+                <td>Spinning</td>
+                <td><span class="badge badge-inactive">Inactivo</span></td>
+              </tr>
+              <tr>
+                <td>Nicolás Vera</td>
+                <td>nico.vera@mail.cl</td>
+                <td>Funcional</td>
+                <td><span class="badge badge-active">Activo</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CLASES ASIGNADAS -->
+      <section class="section" id="clases">
+        <h2 class="section-title">🏋️ Clases Asignadas</h2>
+        <div class="clases-grid">
+          <div class="clase-card">
+            <div class="clase-icon">🔥</div>
+            <h3>Crossfit</h3>
+            <p class="clase-meta">📅 Lunes · ⏰ 07:00</p>
+            <p class="clase-desc">Entrenamiento de alta intensidad con fuerza y resistencia.</p>
+          </div>
+          <div class="clase-card">
+            <div class="clase-icon">⚡</div>
+            <h3>Funcional</h3>
+            <p class="clase-meta">📅 Miércoles · ⏰ 19:00</p>
+            <p class="clase-desc">Movimientos naturales del cuerpo para un entrenamiento completo.</p>
+          </div>
+          <div class="clase-card">
+            <div class="clase-icon">🚴</div>
+            <h3>Spinning</h3>
+            <p class="clase-meta">📅 Viernes · ⏰ 18:00</p>
+            <p class="clase-desc">Cardio intenso en bicicleta estática con música motivacional.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HORARIOS SEMANALES -->
+      <section class="section" id="horarios">
+        <h2 class="section-title">📅 Horarios Semanales</h2>
+        <div class="table-wrap">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>Clase</th>
+                <th>Día</th>
+                <th>Hora</th>
+                <th>Alumnos</th>
+                <th>Sala</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Crossfit</td>
+                <td>Lunes</td>
+                <td>07:00</td>
+                <td>12</td>
+                <td>Sala A</td>
+              </tr>
+              <tr>
+                <td>Funcional</td>
+                <td>Martes</td>
+                <td>19:00</td>
+                <td>8</td>
+                <td>Sala B</td>
+              </tr>
+              <tr>
+                <td>Crossfit</td>
+                <td>Miércoles</td>
+                <td>07:00</td>
+                <td>10</td>
+                <td>Sala A</td>
+              </tr>
+              <tr>
+                <td>Spinning</td>
+                <td>Jueves</td>
+                <td>18:00</td>
+                <td>15</td>
+                <td>Sala C</td>
+              </tr>
+              <tr>
+                <td>Funcional</td>
+                <td>Viernes</td>
+                <td>19:00</td>
+                <td>9</td>
+                <td>Sala B</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
