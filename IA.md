@@ -33,3 +33,14 @@ Claude(anthtropic) - claude.ai
 **Modificaciones:** Modificación de script en index, modificando tamaño y distribución de imagenes y fuentes.
 
 **Justificación:** Ajustar los parámetros probando diferentes opciones visuales.
+
+## Actividad 4: Rehacer el script de login y de resitro
+
+** 01/06/2025 **
+
+** Prompt : ** ""Modificar login y registro para añadir más funciones""
+
+**Modificaciones:** Se modifica colores distribución para hacerlo más profesional, se añaden columnas y colores de fondo con degradé.
+
+**Justificación:** Ajustar los parámetros probando diferentes opciones visuales para realzar los colores corporativos y no hacer planas las páginas.
+
