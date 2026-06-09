@@ -40,7 +40,13 @@
       <section class="section" id="inicio">
         <div class="welcome-card">
           <div>
-            <h1 class="welcome-title">Panel Administrador 🛡️</h1>
+            const user = JSON.parse(localStorage.getItem("user"));
+
+if (!user) {
+  window.location.href = "login.html";
+}
+
+document.getElementById("nombre-usuario").textContent = user.nombre + " " + user.apellido;
             <p class="welcome-msg">Bienvenido al panel de control general del sistema SportClub.</p>
           </div>
           <div class="welcome-badge">⚙️ Administrador</div>
@@ -179,6 +185,6 @@
 
     </main>
   </div>
-
+<script src="../js/dashboard-admin.js"></script>
 </body>
 </html>

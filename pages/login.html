@@ -52,12 +52,13 @@
             <input type="password" id="password" placeholder="Ingresa tu contraseña">
           </div>
 
-          <button type="submit" class="btn-ingresar" onclick="window.location.href='dashboard-usuario.html'">
+          <button type="button" class="btn-ingresar" onclick="iniciarSesion()">
             Ingresar
           </button>
 
         </form>
 
+        <div id="msg-error-login"></div>
         <div class="card-links">
           <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
           <span class="divider">|</span>
@@ -77,6 +78,7 @@
     </div>
 
   </div>
-
+  <script src="../js/usuarios.js"></script>
+  <script src="../js/login.js"></script>
 </body>
 </html>
