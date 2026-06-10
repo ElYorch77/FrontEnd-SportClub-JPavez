@@ -1,29 +1,58 @@
-function iniciarSesion() {
+async function iniciarSesion() {
   const correo = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
   const mensaje = document.getElementById("msg-error-login");
 
-  // Buscar usuario en el array
-  const usuario = usuarios.find(u => u.correo === correo && u.password === password);
+  // Limpiar mensaje anterior
+  mensaje.style.display = "none";
+  mensaje.textContent = "";
 
-  if (!usuario) {
-    mensaje.textContent = "❌ Credenciales incorrectas. Verifica tu correo y contraseña.";
+  // Validaciones básicas
+  if (correo === "") {
+    mensaje.textContent = "❌ El correo es obligatorio.";
     mensaje.style.display = "block";
     return;
   }
 
-  // Ocultar mensaje de error si existía
-  mensaje.style.display = "none";
+  if (password === "") {
+    mensaje.textContent = "❌ La contraseña es obligatoria.";
+    mensaje.style.display = "block";
+    return;
+  }
 
-  // Guardar usuario en localStorage
-  localStorage.setItem("user", JSON.stringify(usuario));
+  try {
+    const response = await fetch("http://localhost:3000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: correo, password: password })
+    });
 
-  // Redirigir según rol
-  if (usuario.rol === "user") {
-    window.location.href = "dashboard-usuario.html";
-  } else if (usuario.rol === "coach") {
-    window.location.href = "dashboard-coach.html";
-  } else if (usuario.rol === "admin") {
-    window.location.href = "dashboard-admin.html";
+    const data = await response.json();
+
+    if (!data.ok) {
+      mensaje.textContent = "❌ " + data.message;
+      mensaje.style.display = "block";
+      return;
+    }
+
+    // Guardar token y usuario en localStorage
+    localStorage.setItem("token", data.data.token);
+    localStorage.setItem("user", JSON.stringify(data.data.user));
+
+    // Redirigir según rol
+    const rol = data.data.user.role;
+
+    if (rol === "user") {
+      window.location.href = "dashboard-usuario.html";
+    } else if (rol === "coach") {
+      window.location.href = "dashboard-coach.html";
+    } else if (rol === "admin") {
+      window.location.href = "dashboard-admin.html";
+    }
+
+  } catch (error) {
+    mensaje.textContent = "❌ Sin conexión con el servidor.";
+    mensaje.style.display = "block";
   }
 }
+
