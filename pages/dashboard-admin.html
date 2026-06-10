@@ -36,17 +36,11 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main class="main">
 
-      <!-- BIENVENIDA + STATS -->
+<!-- BIENVENIDA + STATS -->
       <section class="section" id="inicio">
         <div class="welcome-card">
           <div>
-            const user = JSON.parse(localStorage.getItem("user"));
-
-if (!user) {
-  window.location.href = "login.html";
-}
-
-document.getElementById("nombre-usuario").textContent = user.nombre + " " + user.apellido;
+            <h1 class="welcome-title">Bienvenido, <span id="nombre-usuario"></span> 🛡️</h1>
             <p class="welcome-msg">Bienvenido al panel de control general del sistema SportClub.</p>
           </div>
           <div class="welcome-badge">⚙️ Administrador</div>
@@ -70,7 +64,6 @@ document.getElementById("nombre-usuario").textContent = user.nombre + " " + user
           </div>
         </div>
       </section>
-
       <!-- TABLA USUARIOS -->
       <section class="section" id="usuarios">
         <h2 class="section-title">👥 Usuarios del Sistema</h2>
