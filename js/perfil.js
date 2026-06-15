@@ -130,3 +130,10 @@ async function cambiarPassword() {
 
 // ── INICIAR ──
 cargarPerfil();
+
+// ── CERRAR SESION ──
+function cerrarSesion() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
+}

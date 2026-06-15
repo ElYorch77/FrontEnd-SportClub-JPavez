@@ -5,3 +5,9 @@ if (!user) {
 }
 
 document.getElementById("nombre-usuario").textContent = user.full_name;
+
+function cerrarSesion() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
+}
