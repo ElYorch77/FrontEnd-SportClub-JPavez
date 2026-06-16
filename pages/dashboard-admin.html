@@ -15,8 +15,8 @@
       <img src="../assets/img/logo.png" alt="SportClub" class="header-logo">
     </div>
     <div class="header-right">
-      <a href="#" class="btn-header">👤 Mi Perfil</a>
-      <a href="../pages/login.html" class="btn-header btn-logout">⏻ Cerrar Sesión</a>
+      <a href="perfil.html" class="btn-header">👤 Mi Perfil</a>
+      <a href="#" class="btn-header btn-logout" onclick="cerrarSesion()">⏻ Cerrar Sesión</a>
     </div>
   </header>
 
@@ -36,17 +36,11 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main class="main">
 
-      <!-- BIENVENIDA + STATS -->
+<!-- BIENVENIDA + STATS -->
       <section class="section" id="inicio">
         <div class="welcome-card">
           <div>
-            const user = JSON.parse(localStorage.getItem("user"));
-
-if (!user) {
-  window.location.href = "login.html";
-}
-
-document.getElementById("nombre-usuario").textContent = user.nombre + " " + user.apellido;
+            <h1 class="welcome-title">Bienvenido, <span id="nombre-usuario"></span> 🛡️</h1>
             <p class="welcome-msg">Bienvenido al panel de control general del sistema SportClub.</p>
           </div>
           <div class="welcome-badge">⚙️ Administrador</div>
@@ -70,61 +64,95 @@ document.getElementById("nombre-usuario").textContent = user.nombre + " " + user
           </div>
         </div>
       </section>
-
       <!-- TABLA USUARIOS -->
-      <section class="section" id="usuarios">
-        <h2 class="section-title">👥 Usuarios del Sistema</h2>
-        <div class="table-wrap">
-          <table class="tabla">
-            <thead>
-              <tr>
-                <th>RUT</th>
-                <th>Nombre completo</th>
-                <th>Rol</th>
-                <th>Estado</th>
-                <th>Fecha registro</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>12.345.678-9</td>
-                <td>Jorge Pavez Muñoz</td>
-                <td><span class="rol rol-usuario">Usuario</span></td>
-                <td><span class="badge badge-active">Activo</span></td>
-                <td>01/03/2025</td>
-              </tr>
-              <tr>
-                <td>13.456.789-0</td>
-                <td>Carlos Mena Rojas</td>
-                <td><span class="rol rol-coach">Coach</span></td>
-                <td><span class="badge badge-active">Activo</span></td>
-                <td>15/01/2025</td>
-              </tr>
-              <tr>
-                <td>14.567.890-1</td>
-                <td>María González López</td>
-                <td><span class="rol rol-usuario">Usuario</span></td>
-                <td><span class="badge badge-active">Activo</span></td>
-                <td>20/02/2025</td>
-              </tr>
-              <tr>
-                <td>15.678.901-2</td>
-                <td>Ana Torres Silva</td>
-                <td><span class="rol rol-coach">Coach</span></td>
-                <td><span class="badge badge-inactive">Inactivo</span></td>
-                <td>10/01/2025</td>
-              </tr>
-              <tr>
-                <td>16.789.012-3</td>
-                <td>Pedro Soto Fuentes</td>
-                <td><span class="rol rol-admin">Administrador</span></td>
-                <td><span class="badge badge-active">Activo</span></td>
-                <td>01/01/2025</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+<section class="section" id="usuarios">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;">
+    <h2 class="section-title">👥 Gestión de Usuarios</h2>
+    <button onclick="abrirModalNuevo()" style="background:#1a7a3c;color:#fff;border:none;border-radius:8px;padding:0.6rem 1.2rem;font-weight:700;cursor:pointer;font-size:0.9rem;">➕ Nuevo Usuario</button>
+  </div>
+  <div class="table-wrap">
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre completo</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Fecha registro</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-usuarios">
+        <tr><td colspan="6" style="text-align:center;padding:1rem;">Cargando usuarios...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MODAL EDITAR -->
+<div id="modal-editar" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:14px;padding:2rem;width:100%;max-width:420px;">
+    <h3 style="margin-bottom:1rem;color:#c0392b;">✏️ Editar Usuario</h3>
+    <input type="hidden" id="edit-id">
+    <div style="margin-bottom:0.8rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Nombre completo</label>
+      <input type="text" id="edit-nombre" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+    </div>
+    <div style="margin-bottom:0.8rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Correo</label>
+      <input type="email" id="edit-email" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+    </div>
+    <div style="margin-bottom:1rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Rol</label>
+      <select id="edit-rol" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+        <option value="user">Usuario</option>
+        <option value="coach">Entrenador</option>
+        <option value="admin">Administrador</option>
+      </select>
+    </div>
+    <div id="edit-error" style="display:none;background:#ffebee;color:#c62828;border:1px solid #ef9a9a;border-radius:8px;padding:0.7rem;margin-bottom:0.8rem;font-size:0.88rem;"></div>
+    <div style="display:flex;gap:0.75rem;justify-content:flex-end;">
+      <button onclick="cerrarModal()" style="background:#f0ede8;border:none;border-radius:8px;padding:0.6rem 1.2rem;cursor:pointer;font-weight:600;">Cancelar</button>
+      <button onclick="guardarEdicion()" style="background:#1a56db;color:#fff;border:none;border-radius:8px;padding:0.6rem 1.2rem;cursor:pointer;font-weight:600;">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NUEVO USUARIO -->
+<div id="modal-nuevo" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:14px;padding:2rem;width:100%;max-width:420px;">
+    <h3 style="margin-bottom:1rem;color:#1a7a3c;">➕ Nuevo Usuario</h3>
+    <div style="margin-bottom:0.8rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Nombre completo</label>
+      <input type="text" id="nuevo-nombre" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+    </div>
+    <div style="margin-bottom:0.8rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Correo</label>
+      <input type="email" id="nuevo-email" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+    </div>
+    <div style="margin-bottom:0.8rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Rol</label>
+      <select id="nuevo-rol" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+        <option value="user">Usuario</option>
+        <option value="coach">Entrenador</option>
+        <option value="admin">Administrador</option>
+      </select>
+    </div>
+    <div style="margin-bottom:0.8rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Contraseña</label>
+      <input type="password" id="nuevo-password" placeholder="Mínimo 8 caracteres" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+    </div>
+    <div style="margin-bottom:1rem;">
+      <label style="font-size:0.85rem;font-weight:600;">Confirmar contraseña</label>
+      <input type="password" id="nuevo-password2" placeholder="Repetir contraseña" style="width:100%;padding:0.7rem;border:1.5px solid #e2ddd8;border-radius:8px;margin-top:0.3rem;">
+    </div>
+    <div id="nuevo-error" style="display:none;background:#ffebee;color:#c62828;border:1px solid #ef9a9a;border-radius:8px;padding:0.7rem;margin-bottom:0.8rem;font-size:0.88rem;"></div>
+    <div style="display:flex;gap:0.75rem;justify-content:flex-end;">
+      <button onclick="cerrarModalNuevo()" style="background:#f0ede8;border:none;border-radius:8px;padding:0.6rem 1.2rem;cursor:pointer;font-weight:600;">Cancelar</button>
+      <button onclick="crearUsuario()" style="background:#1a7a3c;color:#fff;border:none;border-radius:8px;padding:0.6rem 1.2rem;cursor:pointer;font-weight:600;">Crear</button>
+    </div>
+  </div>
+</div>
 
       <!-- PANEL REPORTES -->
       <section class="section" id="reportes">

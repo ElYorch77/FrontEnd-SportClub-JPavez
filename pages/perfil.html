@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportClub - Mi Perfil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard-usuario.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <img src="../assets/img/logo.png" alt="SportClub" class="header-logo">
+    </div>
+    <div class="header-right">
+      <a href="#" class="btn-header">👤 Mi Perfil</a>
+      <a href="#" class="btn-header btn-logout" onclick="cerrarSesion()">⏻ Cerrar Sesión</a>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="dashboard-usuario.html" class="nav-item">🏠 Inicio</a>
+        <a href="#" class="nav-item active">👤 Mi Perfil</a>
+      </nav>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main class="main">
+
+      <!-- DATOS DEL PERFIL -->
+      <section class="section">
+        <h2 class="section-title">👤 Mi Perfil</h2>
+        <p style="color:#6b7280;margin-bottom:1.5rem;">Gestiona tu información personal</p>
+
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;align-items:start;">
+
+          <!-- CARD DATOS -->
+          <div style="background:#fff;border:1px solid #dde3f0;border-radius:12px;padding:1.5rem;text-align:center;">
+            <div style="width:72px;height:72px;background:var(--blue);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.8rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">👤</div>
+            <p style="font-weight:700;font-size:1.1rem;" id="perfil-nombre">—</p>
+            <p style="color:#6b7280;font-size:0.85rem;margin-bottom:0.5rem;" id="perfil-email">—</p>
+            <span id="perfil-rol-badge" style="font-size:0.75rem;font-weight:700;padding:2px 10px;border-radius:100px;background:#1a56db;color:#fff;" id="perfil-rol">—</span>
+            <hr style="margin:1rem 0;border-color:#dde3f0;">
+            <div style="text-align:left;">
+              <p style="font-size:0.8rem;color:#6b7280;margin-bottom:0.3rem;">📅 Fecha de nacimiento</p>
+              <p style="font-size:0.9rem;font-weight:600;" id="perfil-fecha">—</p>
+              <p style="font-size:0.8rem;color:#6b7280;margin-top:0.8rem;margin-bottom:0.3rem;">🔑 Rol</p>
+              <p style="font-size:0.9rem;font-weight:600;" id="perfil-rol">—</p>
+            </div>
+          </div>
+
+          <!-- FORMULARIOS -->
+          <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+            <!-- EDITAR DATOS -->
+            <div style="background:#fff;border:1px solid #dde3f0;border-radius:12px;padding:1.5rem;">
+              <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--blue);margin-bottom:1rem;">Información Personal</h3>
+
+              <div id="perfil-success" style="display:none;background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7;border-radius:8px;padding:0.7rem;margin-bottom:0.8rem;font-size:0.88rem;"></div>
+              <div id="perfil-error" style="display:none;background:#ffebee;color:#c62828;border:1px solid #ef9a9a;border-radius:8px;padding:0.7rem;margin-bottom:0.8rem;font-size:0.88rem;"></div>
+
+              <div style="margin-bottom:0.8rem;">
+                <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.3rem;">Nombre completo</label>
+                <input type="text" id="edit-nombre" style="width:100%;padding:0.7rem;border:1.5px solid #dde3f0;border-radius:8px;font-family:'DM Sans',sans-serif;">
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.3rem;">Fecha de nacimiento</label>
+                <input type="date" id="edit-fecha" style="width:100%;padding:0.7rem;border:1.5px solid #dde3f0;border-radius:8px;font-family:'DM Sans',sans-serif;">
+              </div>
+
+              <button onclick="guardarPerfil()" style="background:var(--blue);color:#fff;border:none;border-radius:8px;padding:0.7rem 1.5rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;">✅ Guardar cambios</button>
+            </div>
+
+            <!-- CAMBIAR CONTRASEÑA -->
+            <div style="background:#fff;border:1px solid #dde3f0;border-radius:12px;padding:1.5rem;">
+              <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--blue);margin-bottom:1rem;">Cambiar Contraseña</h3>
+
+              <div id="pass-success" style="display:none;background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7;border-radius:8px;padding:0.7rem;margin-bottom:0.8rem;font-size:0.88rem;"></div>
+              <div id="pass-error" style="display:none;background:#ffebee;color:#c62828;border:1px solid #ef9a9a;border-radius:8px;padding:0.7rem;margin-bottom:0.8rem;font-size:0.88rem;"></div>
+
+              <div style="margin-bottom:0.8rem;">
+                <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.3rem;">Contraseña actual</label>
+                <input type="password" id="pass-actual" placeholder="Ingresa tu contraseña actual" style="width:100%;padding:0.7rem;border:1.5px solid #dde3f0;border-radius:8px;font-family:'DM Sans',sans-serif;">
+              </div>
+
+              <div style="margin-bottom:0.8rem;">
+                <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.3rem;">Nueva contraseña</label>
+                <input type="password" id="pass-nueva" placeholder="Mínimo 8 caracteres" style="width:100%;padding:0.7rem;border:1.5px solid #dde3f0;border-radius:8px;font-family:'DM Sans',sans-serif;">
+              </div>
+
+              <div style="margin-bottom:1rem;">
+                <label style="font-size:0.85rem;font-weight:600;display:block;margin-bottom:0.3rem;">Confirmar nueva contraseña</label>
+                <input type="password" id="pass-confirmar" placeholder="Repetir contraseña" style="width:100%;padding:0.7rem;border:1.5px solid #dde3f0;border-radius:8px;font-family:'DM Sans',sans-serif;">
+              </div>
+
+              <p style="font-size:0.78rem;color:#6b7280;margin-bottom:0.8rem;">ℹ️ La contraseña debe tener mínimo 8 caracteres, incluir números y letras.</p>
+
+              <button onclick="cambiarPassword()" style="background:#1a7a3c;color:#fff;border:none;border-radius:8px;padding:0.7rem 1.5rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;">🔒 Actualizar contraseña</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../js/perfil.js"></script>
+
+</body>
+</html>
